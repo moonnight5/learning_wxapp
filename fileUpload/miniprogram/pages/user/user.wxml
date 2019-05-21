@@ -1,0 +1,4 @@
+<!--miniprogram/pages/user/user.wxml-->
+<block wx:for="{{photos}}">
+  <image src="{{item.image}}" />
+</block>

@@ -1,0 +1,29 @@
+//index.js
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+    start: false
+  },
+  _getCountdownEvent(e){
+    this.setData({
+      start: true
+    })
+  },
+  _setStartDataEvent (e) {
+    console.log(e)
+    if (e.detail.start === false) {
+      this.setData({
+        start: false
+      })
+    }
+  },
+  onLoad: function () {
+    // setTimeout(() => {
+    //   this.setData({
+    //     start: true
+    //   })
+    // },2000)
+  }
+})
