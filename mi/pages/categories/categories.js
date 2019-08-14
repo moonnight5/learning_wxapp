@@ -1,18 +1,50 @@
 // pages/categories/categories.js
+const app = getApp();
+
+  
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    cate_nav_list:[
+      {name:"新品",id:"new"},
+      {name:"手机",id:"phone"},
+      {name:"电视",id:"tv"},
+      {name:"电脑",id:"laptop"},
+      {name:"家电",id:"appliance"},
+      {name:"路由",id:"router"},
+      {name:"智能",id:"smart"},
+      {name:"儿童",id:"kids"},
+      {name:"灯具",id:"lignts"},
+      {name:"电源",id:"adapter"},
+      {name:"耳机",id:"headset"},
+      {name:"音箱",id:"voicebox"},
+      {name:"生活",id:"life"},
+      {name:"服务",id:"service"},
+      {name:"米粉卡",id:"card"}
+    ],
+    curIndex: 0,
+    toView: 'new',
+    detail: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const detail = app.globalData.category;
+    this.setData({
+      detail
+    })
+  },
+  switchCategory (el) {
+    console.log(el)
+    const curIndex = el.currentTarget.dataset.index
+    this.setData({
+      curIndex
+    })
   },
 
   /**
